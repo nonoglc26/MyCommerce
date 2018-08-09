@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+<title>Liste des clients</title>
+</head>
+<body>
+
+	<ui:insert>
+		<ui:include src="/templates/header.xhtml" />
+	</ui:insert>
+
+	<h1 style="color: darkblue; text-align: center">Liste des
+		clients </h1>
+	<p:dataTable var="cl" value="#{clMB.liste}" >
+		<p:column headerText="Id">
+			<h:outputText value="#{}" />
+		</p:column>
+
+		<p:column headerText="Nom">
+			<h:outputText value="#{}" />
+		</p:column>
+
+		<p:column headerText="Adresse">
+			<h:outputText value="#{}" />
+		</p:column>
+
+		<p:column headerText="Email">
+			<h:outputText value="#{}"/>
+		</p:column>
+		
+		<p:column headerText="Téléphone">
+			<h:outputText value="#{}"/>
+		</p:column>
+		
+	</p:dataTable>
+
+</body>
+</html>

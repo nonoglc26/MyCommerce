@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+<title>Rechercher un client</title>
+</head>
+<body>
+
+	<ui:insert>
+		<ui:include src="/templates/header.xhtml" />
+	</ui:insert>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			N° client : <p:inputText value="#{}" />
+			<p:commandButton value="Rechercher un compte client" action="#{}" />
+		</h:panelGrid>
+	</h:form>
+	
+		<h1 style="color: darkblue; text-align: center"> Informations client</h1>
+	<p:dataTable var="cl" value="#{}">
+		<p:column headerText="Id">
+			<h:outputText value="#{}" />
+		</p:column>
+
+		<p:column headerText="Nom">
+			<h:outputText value="#{}" />
+		</p:column>
+
+		<p:column headerText="Adresse">
+			<h:outputText value="#{}" />
+		</p:column>
+
+		<p:column headerText="Email">
+			<h:outputText value="#{}"/>
+		</p:column>
+		
+		<p:column headerText="Téléphone">
+			<h:outputText value="#{}"/>
+		</p:column>
+		
+	</p:dataTable>
+	
+<h1>
+<h:messages/>
+</h1>	
+
+</body>
+</html>

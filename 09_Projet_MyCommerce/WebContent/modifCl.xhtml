@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+<title>Modification client</title>
+</head>
+<body>
+	<ui:insert>
+		<ui:include src="/templates/header.xhtml" />
+	</ui:insert>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			N° client : <p:inputText value="#{clMB.client.idClient}" />
+			Nom : <p:inputText value="#{clMB.client.nomClient}" />
+			Adresse : <p:inputText value="#{clMB.client.adresse}" />
+			Email : <p:inputText value="#{clMB.client.email}" />
+			Téléphone : <p:inputText value="#{clMB.client.tel}" />
+			Mot de passe : <p:inputText value="#{clMB.client.mdp}" />
+			<p:commandButton value="Modifier votre compte client" action="#{clMB.modifierClient}" />
+		</h:panelGrid>
+	</h:form>
+<h1>
+<h:messages/>
+</h1>
+</body>
+</html>

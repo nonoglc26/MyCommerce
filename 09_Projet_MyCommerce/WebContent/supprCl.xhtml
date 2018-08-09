@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+<title>Suppression client</title>
+</head>
+<body>
+	<ui:insert>
+		<ui:include src="/templates/header.xhtml" />
+	</ui:insert>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			N° client : <p:inputText value="#{}" />
+			<p:commandButton value="Supprimer votre compte client" action="#{}" />
+		</h:panelGrid>
+	</h:form>
+	<h1>
+<h:messages/>
+</h1>
+</body>
+</html>
