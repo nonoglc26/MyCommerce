@@ -2,7 +2,7 @@ package fr.adaming.model;
 
 import java.util.List;
 
-import javax.persistence.OneToMany;
+
 
 
 /**

@@ -210,6 +210,22 @@ public class Client {
 	}
 
 
+	/**
+	 * @return the commande
+	 */
+	public Commande getCommande() {
+		return commande;
+	}
+
+
+	/**
+	 * @param commande the commande to set
+	 */
+	public void setCommande(Commande commande) {
+		this.commande = commande;
+	}
+
+
 
 
 	

@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -125,6 +124,42 @@ public class Commande {
 	 */
 	public void setDateComande(Date dateComande) {
 		this.dateComande = dateComande;
+	}
+
+
+
+	/**
+	 * @return the listeCommande
+	 */
+	public List<Client> getListeCommande() {
+		return listeCommande;
+	}
+
+
+
+	/**
+	 * @param listeCommande the listeCommande to set
+	 */
+	public void setListeCommande(List<Client> listeCommande) {
+		this.listeCommande = listeCommande;
+	}
+
+
+
+	/**
+	 * @return the listeLigne
+	 */
+	public List<LigneCommande> getListeLigne() {
+		return listeLigne;
+	}
+
+
+
+	/**
+	 * @param listeLigne the listeLigne to set
+	 */
+	public void setListeLigne(List<LigneCommande> listeLigne) {
+		this.listeLigne = listeLigne;
 	}
 	
 

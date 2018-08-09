@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -39,7 +38,7 @@ public class LigneCommande {
 	@JoinColumn(name="co_id", referencedColumnName="id_co")
 	private Commande commande;
 	
-	
+	//association UML en Java
 	private Panier panier;
 	
 	//Construsteurs
@@ -130,6 +129,54 @@ public class LigneCommande {
 	 */
 	public void setPrix(double prix) {
 		this.prix = prix;
+	}
+
+
+	/**
+	 * @return the produit
+	 */
+	public Produit getProduit() {
+		return produit;
+	}
+
+
+	/**
+	 * @param produit the produit to set
+	 */
+	public void setProduit(Produit produit) {
+		this.produit = produit;
+	}
+
+
+	/**
+	 * @return the commande
+	 */
+	public Commande getCommande() {
+		return commande;
+	}
+
+
+	/**
+	 * @param commande the commande to set
+	 */
+	public void setCommande(Commande commande) {
+		this.commande = commande;
+	}
+
+
+	/**
+	 * @return the panier
+	 */
+	public Panier getPanier() {
+		return panier;
+	}
+
+
+	/**
+	 * @param panier the panier to set
+	 */
+	public void setPanier(Panier panier) {
+		this.panier = panier;
 	}
 	
 
