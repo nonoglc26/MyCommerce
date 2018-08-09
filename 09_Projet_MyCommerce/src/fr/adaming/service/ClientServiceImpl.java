@@ -21,7 +21,7 @@ public class ClientServiceImpl implements IClientService{
 	}
 
 	@Override
-	public Client supprimerCl(Client cl) {
+	public int supprimerCl(Client cl) {
 		return clDao.supprimerCl(cl);
 	}
 

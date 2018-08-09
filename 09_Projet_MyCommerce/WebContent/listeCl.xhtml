@@ -17,25 +17,25 @@
 
 	<h1 style="color: darkblue; text-align: center">Liste des
 		clients </h1>
-	<p:dataTable var="cl" value="#{clMB.liste}" >
+	<p:dataTable var="cl" value="#{clMB.liste}" update="@all">
 		<p:column headerText="Id">
-			<h:outputText value="#{}" />
+			<h:outputText value="#{cl.idClient}" />
 		</p:column>
 
 		<p:column headerText="Nom">
-			<h:outputText value="#{}" />
+			<h:outputText value="#{cl.nomClient}" />
 		</p:column>
 
 		<p:column headerText="Adresse">
-			<h:outputText value="#{}" />
+			<h:outputText value="#{cl.adresse}" />
 		</p:column>
 
 		<p:column headerText="Email">
-			<h:outputText value="#{}"/>
+			<h:outputText value="#{cl.email}"/>
 		</p:column>
 		
 		<p:column headerText="Téléphone">
-			<h:outputText value="#{}"/>
+			<h:outputText value="#{cl.tel}"/>
 		</p:column>
 		
 	</p:dataTable>

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -43,6 +44,14 @@ public class ClientManagedBean implements Serializable {
 	public ClientManagedBean() {
 		super();
 		this.client = new Client();
+	}
+	
+	/**
+	 * Methode init() qui s'effectura en PostConstruct
+	 */
+	@PostConstruct
+	public void init(){
+		liste = clService.getAllClients();
 	}
 
 	// declaration des getter et setter
@@ -89,7 +98,7 @@ public class ClientManagedBean implements Serializable {
 	public String ajouterClient() {
 		Client clAjout = clService.ajouterCl(this.client);
 		if (clAjout != null) {
-			return "accueil";
+			return "listeCl";
 		} else {
 			// afficher un message d'erreur
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("L'ajout du client a échoué"));
@@ -97,17 +106,9 @@ public class ClientManagedBean implements Serializable {
 		}
 	}
 
-	public String afficherClients() {
-		liste = clService.getAllClients();
-		return "listeCl";
-	}
-
 	public String modifierClient() {
-		System.out.println("je suis dans le MB");
-		int retour= clService.modifierCl(this.client);
-		System.out.println(retour);
+		int retour = clService.modifierCl(this.client);
 		if (retour != 0) {
-			System.out.println("je retourne dans l'accueil");
 			return "accueil";
 		} else {
 			// afficher un message d'erreur
@@ -115,4 +116,28 @@ public class ClientManagedBean implements Serializable {
 			return "modifCl";
 		}
 	}
+
+	public String supprimerClient() {
+		int retour = clService.supprimerCl(this.client);
+		if (retour != 0) {
+			return "accueil";
+		} else {
+			// afficher un message d'erreur
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("La suppression du client a échoué"));
+			return "supprCl";
+		}
+	}
+
+	public String ficheClient() {
+		Client clOut = clService.getById(this.client);
+		if (clOut != null) {
+			this.client=clOut;
+		} else {
+			// afficher un message d'erreur
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage("La recherche a échoué : ID incorrect ?"));
+		}
+		return "ficheCl";
+	}
+
 }

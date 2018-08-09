@@ -21,7 +21,7 @@ public interface IClientService {
 	 * @param cl correspondant au client à supprimer
 	 * @return client
 	 */
-	public  Client supprimerCl(Client cl);
+	public  int supprimerCl(Client cl);
 	
 	/**
 	 * Méthode modifier un client
