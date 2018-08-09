@@ -1,5 +1,7 @@
 package fr.adaming.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,40 +9,37 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 /**
- * Classe Client
- * 	Classe persistante
- * 	association OneToMany avec la classe Commande
- * 	
+ * Classe Client Classe persistante association OneToMany avec la classe
+ * Commande
+ * 
  */
 
 @Entity
-@Table(name="clients")
+@Table(name = "clients")
 public class Client {
 
-	//Attributs
+	// Attributs
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_cl")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_cl")
 	private long idClient;
 	private String nomClient;
 	private String adresse;
 	private String email;
 	private String tel;
 	private String mdp;
-	
-	
-	//Transformation de l'association UML en Java
-	@ManyToOne
-	@JoinColumn(name="co-id", referencedColumnName="id_co")
-	private Commande commande;
-	
-	
-	//Constructeurs
-	
+
+	// Transformation de l'association UML en Java
+	@OneToMany(mappedBy = "client")
+
+	private List<Commande> listeCommandes;
+
+	// Constructeurs
+
 	/**
 	 * Constructeur vide
 	 */
@@ -48,9 +47,9 @@ public class Client {
 		super();
 	}
 
-
 	/**
 	 * Constructeur avec parametres avec id
+	 * 
 	 * @param idClient
 	 * @param nomClient
 	 * @param adresse
@@ -68,9 +67,9 @@ public class Client {
 		this.mdp = mdp;
 	}
 
-
 	/**
 	 * Constructeur avec parametres sans id
+	 * 
 	 * @param nomClient
 	 * @param adresse
 	 * @param email
@@ -86,9 +85,9 @@ public class Client {
 		this.mdp = mdp;
 	}
 
-
 	/**
-	 * Constructeur avec parametres 
+	 * Constructeur avec parametres
+	 * 
 	 * @param email
 	 * @param mdp
 	 */
@@ -98,138 +97,135 @@ public class Client {
 		this.mdp = mdp;
 	}
 
-
-	
-	//Getters et Setters
+	// Getters et Setters
 	/**
 	 * 
 	 * getters
+	 * 
 	 * @return the idClient
 	 */
 	public long getIdClient() {
 		return idClient;
 	}
 
-
 	/**
 	 * Setters
-	 * @param idClient the idClient to set
+	 * 
+	 * @param idClient
+	 *            the idClient to set
 	 */
 	public void setIdClient(long idClient) {
 		this.idClient = idClient;
 	}
 
-
 	/**
 	 * getters
+	 * 
 	 * @return the nomClient
 	 */
 	public String getNomClient() {
 		return nomClient;
 	}
 
-
 	/**
 	 * setters
-	 * @param nomClient the nomClient to set
+	 * 
+	 * @param nomClient
+	 *            the nomClient to set
 	 */
 	public void setNomClient(String nomClient) {
 		this.nomClient = nomClient;
 	}
 
-
 	/**
 	 * getters
+	 * 
 	 * @return the adresse
 	 */
 	public String getAdresse() {
 		return adresse;
 	}
 
-
 	/**
 	 * setters
-	 * @param adresse the adresse to set
+	 * 
+	 * @param adresse
+	 *            the adresse to set
 	 */
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
 
-
 	/**
 	 * getters
+	 * 
 	 * @return the email
 	 */
 	public String getEmail() {
 		return email;
 	}
 
-
 	/**
 	 * setters
-	 * @param email the email to set
+	 * 
+	 * @param email
+	 *            the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
 	/**
 	 * getters
+	 * 
 	 * @return the tel
 	 */
 	public String getTel() {
 		return tel;
 	}
 
-
 	/**
 	 * setters
-	 * @param tel the tel to set
+	 * 
+	 * @param tel
+	 *            the tel to set
 	 */
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
-
 	/**
 	 * getters
+	 * 
 	 * @return the mdp
 	 */
 	public String getMdp() {
 		return mdp;
 	}
 
-
 	/**
 	 * setters
-	 * @param mdp the mdp to set
+	 * 
+	 * @param mdp
+	 *            the mdp to set
 	 */
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
 
-
 	/**
-	 * @return the commande
+	 * @return the listeCommandes
 	 */
-	public Commande getCommande() {
-		return commande;
+	public List<Commande> getListeCommandes() {
+		return listeCommandes;
 	}
 
-
 	/**
-	 * @param commande the commande to set
+	 * @param listeCommandes
+	 *            the listeCommandes to set
 	 */
-	public void setCommande(Commande commande) {
-		this.commande = commande;
+	public void setListeCommandes(List<Commande> listeCommandes) {
+		this.listeCommandes = listeCommandes;
 	}
 
-
-
-
-	
-	
-	
-	
 }

@@ -39,7 +39,7 @@ public class LigneCommande {
 	private Commande commande;
 	
 	//association UML en Java
-	private Panier panier;
+
 	
 	//Construsteurs
 	/**
@@ -164,21 +164,7 @@ public class LigneCommande {
 	}
 
 
-	/**
-	 * @return the panier
-	 */
-	public Panier getPanier() {
-		return panier;
-	}
 
-
-	/**
-	 * @param panier the panier to set
-	 */
-	public void setPanier(Panier panier) {
-		this.panier = panier;
-	}
-	
 
 	
 	
