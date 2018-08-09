@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+
+<title>Supprimer produit</title>
+</h:head>
+
+<h:body>
+
+
+<ui:insert>
+		<ui:include src="/templates/header.xhtml"/>
+</ui:insert>
+
+
+
+  <h1 style="color:red; text-align: center;">Supprimer un produit</h1>
+  
+  
+	<h:form>
+		<h:panelGrid columns="2">
+		Id: <p:inputText value="#{pMB.p.idProduit}"/>
+		<p:commandButton value="Supprimer" action="#{pMB.SupprimerProduit}"/>
+		
+		
+		</h:panelGrid>
+	</h:form>
+
+		
+		
+		
+	  
+
+</h:body>
+</html>

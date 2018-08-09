@@ -28,7 +28,7 @@
 				</p:column>
 			</p:menuitem>
 
-			<p:submenu label="Produits" icon="ui-icon-document">
+			<p:submenu label="Clients" icon="ui-icon-document">
 				<p:column>
 					<p:submenu label="Client">
 						<p:menuitem value="Liste des clients" url="listeCl.xhtml"/>
@@ -43,10 +43,11 @@
 			<p:submenu label="Produits et Catégories" icon="ui-icon-pencil">
 				<p:column>
 					<p:submenu label="Produits">
-						<p:menuitem value="Liste des produits" url="#" actionListener="#{ccMB.getList}" />			
-						<p:menuitem value="Modifier un produit" url="#" />
-						<p:menuitem value="Supprimer un produit" url="#" />
-						<p:menuitem value="Rechercher un produit" url="#" />
+						<p:menuitem value="Liste des produits" url="listeProduit.xhtml" />	
+						<p:menuitem value="Ajouter un produit" url="ajoutProduit.xhtml" />		
+						<p:menuitem value="Modifier un produit" url="modifierProduit.xhtml" />
+						<p:menuitem value="Supprimer un produit" url="supprimerProduit.xhtml" />
+						<p:menuitem value="Rechercher un produit" url="rechercheProduit.xhtml" />
 					</p:submenu>
 				</p:column>
 

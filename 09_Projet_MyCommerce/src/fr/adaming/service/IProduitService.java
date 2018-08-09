@@ -10,13 +10,15 @@ import fr.adaming.model.Produit;
 public interface IProduitService {
 
 	public List<Produit> getAllProduit ();
-//	public Produit getProduitById (Produit p, Administrateur ad);
-//	public Produit getProduitByNom (Produit p,Administrateur ad);
-//	public Produit addProduit(Produit p, Administrateur ad);
-//	public Produit updateProduit(Produit p,Administrateur ad);
-//	public Produit deleteProduit(Produit p, Administrateur ad);
-//	
-//	
+	public Produit addProduit(Produit p);
+	public Produit getProduitById(Produit p);
+	public Produit deleteProduit(Produit p);
+	public Produit updateProduit(Produit p);
+
+//	public Produit getProduitByNom (Produit p);
+//	public Produit updateProduit(Produit p);
+	
+
 //	public List<Categorie> getAllCategorie(Administrateur ad);
 //	public Categorie getCategorieById (Categorie ca, Administrateur ad);
 //	public Categorie getCategorieByNom (Categorie ca,Administrateur ad);

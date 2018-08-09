@@ -4,21 +4,28 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import fr.adaming.model.Administrateur;
 import fr.adaming.model.Produit;
+
+/**
+ * IProduitDao
+ * Amandine
+ * 
+ */
 
 @Local
 public interface IProduitDao {
 
 	public List<Produit> getAllProduit ();
 	public Produit addProduit(Produit p);
+	public Produit getProduitById(Produit p);
+	public Produit deleteProduit(Produit p);
+	public Produit updateProduit(Produit p);
 	
 	
-//	public Produit getProduitById (Administrateur ad);
+
 //	public Produit getProduitByNom (Administrateur ad);
-//	public Produit addProduit(Administrateur ad);
 //	public Produit updateProduit(Administrateur ad);
-//	public Produit deleteProduit(Administrateur ad);
+
 //	
 //	
 //	public List<Categorie> getAllCategorie(Administrateur ad);
