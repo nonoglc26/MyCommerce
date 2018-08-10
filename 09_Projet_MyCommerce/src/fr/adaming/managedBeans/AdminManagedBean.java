@@ -3,6 +3,7 @@ package fr.adaming.managedBeans;
 import java.io.Serializable;
 
 import javax.ejb.EJB;
+import javax.enterprise.concurrent.AbortedException;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -36,6 +37,7 @@ public class AdminManagedBean implements Serializable{
 	 */
 	public AdminManagedBean() {
 		super();
+		this.ad= new Administrateur();
 	}
 
 

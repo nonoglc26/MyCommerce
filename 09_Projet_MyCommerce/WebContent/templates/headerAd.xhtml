@@ -9,19 +9,9 @@
 <h:head>
 </h:head>
 <h:body>
-	<h:form id="form">
-		<h:panelGrid columns="2" cellpadding="4">
-			<p:outputLabel for="orientation" value="Orientation:" />
-			<p:selectOneButton id="orientation"
-				value="#{megaMenuView.orientation}" onchange="$('#form').submit()">
-				<f:selectItem itemLabel="Horizontal" itemValue="horizontal" />
-				<f:selectItem itemLabel="Vertical" itemValue="vertical" />
-			</p:selectOneButton>
-		</h:panelGrid>
 
 
-		<p:megaMenu orientation="#{megaMenuView.orientation}"
-			style="margin-top:20px">
+<p:megaMenu style="margin-top:20px">
 			<p:menuitem label="Accueil" icon="ui-icon-check" url="accueil.xhtml">
 				<p:column>
 					<strong>Accueil</strong>
@@ -29,20 +19,7 @@
 								
 			</p:menuitem>
 
-			<p:submenu label="Clients" icon="ui-icon-document">
-				<p:column>
-					<p:submenu label="Client">
-						<p:menuitem value="Liste des clients" url="listeCl.xhtml"/>
-						<p:menuitem value="Ajouter un nouveau client" url="ajoutCl.xhtml" />
-						<p:menuitem value="Modifier un client" url="modifCl.xhtml" />
-						<p:menuitem value="Supprimer un client" url="supprCl.xhtml" />
-						<p:menuitem value="Rechercher un client" url="ficheCl.xhtml" />
-						<p:menuitem value="Se connecter" url="connectClient.xhtml" />
-					</p:submenu>
-				</p:column>
-			</p:submenu>
-
-			<p:submenu label="Produits et Catégories" icon="ui-icon-pencil">
+			<p:submenu label="Produits" icon="ui-icon-document">
 				<p:column>
 					<p:submenu label="Produits">
 						<p:menuitem value="Liste des produits" url="listeProduit.xhtml" />	
@@ -52,9 +29,11 @@
 						<p:menuitem value="Rechercher un produit" url="rechercheProduit.xhtml" />
 					</p:submenu>
 				</p:column>
-
+			</p:submenu>
+			
+			<p:submenu label="Produits" icon="ui-icon-document">
 				<p:column>
-					<p:submenu label="Categories" icon="ui-icon-help">
+					<p:submenu label="Catégories">
 						<p:menuitem value="Liste des categories" url="listeCat.xhtml" />
 						<p:menuitem value="Ajouter une categorie" url="ajoutCat.xhtml" />
 						<p:menuitem value="Modifier une categorie" url="modifCat.xhtml" />
@@ -64,12 +43,13 @@
 				</p:column>
 			</p:submenu>
 
-		<p:menuitem value="Administrateur"  url="loginAd.xhtml" />		
+			
+
+		<p:menuitem value="Deconnexion"  url="#" />		
 		
 		</p:megaMenu>
 
 
-	</h:form>
 	
 
 </h:body>

@@ -15,12 +15,27 @@
 <h:body>
 
 
-<ui:insert>
-		<ui:include src="/templates/header.xhtml"/>
-</ui:insert>
 
+<div class="formulaire" align="center">
+	<h2 style="text-align: center">Veuillez vous identifier</h2>
+	<br/>
 
+	<h:form>
+		<h:panelGrid columns="2">
+		
+		Identifiant:<p:inputText value="#{adMB.ad.nom}"/>
+		Mot de passe:<p:password value="#{adMB.ad.mdp}"/>
+		<br/>
+		
+		<p:commandButton value="Se connecter" action="#{adMB.seConnecter}" icon="ui-icon-check"/>
+	
+		</h:panelGrid>
+	
+	</h:form> 
+</div>
+<br/>
 
+<h1 style="color:red; text-align: center;"><h:messages></h:messages></h1>
 
 
 
