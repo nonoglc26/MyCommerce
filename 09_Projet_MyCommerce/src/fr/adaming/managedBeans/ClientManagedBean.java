@@ -45,12 +45,12 @@ public class ClientManagedBean implements Serializable {
 		super();
 		this.client = new Client();
 	}
-	
+
 	/**
 	 * Methode init() qui s'effectura en PostConstruct
 	 */
 	@PostConstruct
-	public void init(){
+	public void init() {
 		liste = clService.getAllClients();
 	}
 
@@ -131,13 +131,25 @@ public class ClientManagedBean implements Serializable {
 	public String ficheClient() {
 		Client clOut = clService.getById(this.client);
 		if (clOut != null) {
-			this.client=clOut;
+			this.client = clOut;
 		} else {
 			// afficher un message d'erreur
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage("La recherche a échoué : ID incorrect ?"));
 		}
 		return "ficheCl";
+	}
+
+	public String connexionClient() {
+		Client clOut = clService.authentifier(this.client);
+		if (clOut != null) {
+			return "accueil";
+		} else {
+			// afficher un message d'erreur
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Email ou mot de passe incorrect"));
+			return "connectClient";
+		}
+
 	}
 
 }

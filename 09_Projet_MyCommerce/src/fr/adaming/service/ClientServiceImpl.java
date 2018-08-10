@@ -40,4 +40,9 @@ public class ClientServiceImpl implements IClientService{
 		return clDao.getById(cl);
 	}
 
+	@Override
+	public Client authentifier(Client cl) {
+		return clDao.authentifier(cl);
+	}
+
 }

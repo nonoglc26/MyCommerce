@@ -50,5 +50,12 @@ public interface IClientDao {
 	 * @return Client avec ses informations
 	 */
 	public Client getById (Client cl);
+	
+	/**
+	 * Methode de connexion du client
+	 * @param client
+	 * @return client
+	 */
+	public Client authentifier(Client cl);
 
 }
