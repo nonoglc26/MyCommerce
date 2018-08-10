@@ -123,6 +123,11 @@ public class ProduitManagedBean implements Serializable {
 		return "rechercheProduit";
 	}
 
+
+	/**
+	 * Methode ajouter OK
+	 * 
+	 */
 	public String ajouterProduit() {
 		this.p.setPhoto(file.getContents());
 		Produit pAjout = pService.addProduit(this.p);
@@ -140,6 +145,11 @@ public class ProduitManagedBean implements Serializable {
 		}
 
 	}
+	
+	/**
+	 * Methode supprimer OK
+	 * 
+	 */
 
 	public String SupprimerProduit() {
 		Produit pSup = pService.deleteProduit(this.p);
@@ -152,11 +162,35 @@ public class ProduitManagedBean implements Serializable {
 			return "supprimerProduit";
 		}
 	}
+	/**
+	 * Methode afficher liste
+	 * 
+	 */
 
 	public String AfficherListe() {
 		@SuppressWarnings("unused")
 		List<Produit> listeProduit = pService.getAllProduit();
 		return "listeProduit";
 	}
+	
 
+
+	/**
+	 * Methode modifier
+	 * 
+	 */
+	
+	public String ModifierProduit(){
+		this.p.setPhoto(file.getContents());
+		Produit pModif =pService.updateProduit(this.p);
+		if(pModif!=null){
+			listeProduit= pService.getAllProduit();
+			return "listeProduit";
+		}else{
+			// ajouter un message d'erreur
+				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("La modification a échoué"));
+				return "modifierProduit";
+		}
+	}
+	
 }

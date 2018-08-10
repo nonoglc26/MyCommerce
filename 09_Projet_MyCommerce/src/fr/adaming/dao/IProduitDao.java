@@ -24,17 +24,8 @@ public interface IProduitDao {
 	
 
 //	public Produit getProduitByNom (Administrateur ad);
-//	public Produit updateProduit(Administrateur ad);
 
-//	
-//	
-//	public List<Categorie> getAllCategorie(Administrateur ad);
-//	public Categorie getCategorieById (Administrateur ad);
-//	public Categorie getCategorieByNom (Administrateur ad);
-//	public Categorie addCategorie(Administrateur ad);
-//	public Categorie updateCategorie(Administrateur ad);
-//	public Categorie deleteCategorie(Administrateur ad);
-	
+
 	
 	
 }

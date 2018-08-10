@@ -51,12 +51,22 @@ public class ProduitDaoImpl implements IProduitDao{
 
 	@Override
 	public Produit deleteProduit(Produit p) {
-		em.remove(p);
-		return p;
+		Produit pr=em.find(Produit.class, p.getIdProduit());
+		try{
+			em.remove(pr);
+			return pr;
+			
+		}catch(Exception ex){
+		ex.printStackTrace();
+		}
+		return null;
 	}
+		
 
 	@Override
 	public Produit updateProduit(Produit p) {
+		Produit pr=em.find(Produit.class, p.getIdProduit());
+		pr.setImage("data:image/png;base64,"+Base64.encodeBase64String(pr.getPhoto()));
 		em.merge(p);
 		return p;
 	}

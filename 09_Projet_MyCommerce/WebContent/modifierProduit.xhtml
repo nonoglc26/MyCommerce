@@ -15,33 +15,27 @@
 <h:body>
 
 
-<ui:insert>
-		<ui:include src="/templates/header.xhtml"/>
-</ui:insert>
+	<ui:insert>
+			<ui:include src="/templates/header.xhtml"/>
+	</ui:insert>
 
 
 
-	<h:form>
+	<h:form enctype="multipart/form-data">
 		<h:panelGrid columns="2">
 		Id du produit : <p:inputText value="#{pMB.p.idProduit}"/>
 		Designation :<p:inputText value="#{pMB.p.designation}"/>
 		Description :<p:inputText value="#{pMB.p.description}"/>
 		Prix :<p:inputText value="#{pMB.p.prix}"/>
 		Quantite :<p:inputText value="#{pMB.p.quantite}"/>
-		Photo : <p:graphicImage value="#{pMB.p.photo}"/>
-		<p:commandButton value="Ajouter" action="#{pMB.modifierProduit}"/>
-		</h:panelGrid>h:panelGrid >
+		Photo : <p:fileUpload value="#{pMB.file}" mode="simple" skinSimple="true"/>
+		<p:commandButton value="Modifier" action="#{pMB.ModifierProduit}" ajax="false"/>
+		</h:panelGrid>
 	</h:form>	
 		
 		
 		
-		</h:panelGrid>
-
-
-
-		
-		
-		
+ <h1 style="color:red; text-align: center;"><h:messages></h:messages></h1>	
 	  
 
 </h:body>
