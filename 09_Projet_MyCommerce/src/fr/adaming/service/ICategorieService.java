@@ -1,4 +1,4 @@
-package fr.adaming.dao;
+package fr.adaming.service;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.ejb.Local;
 import fr.adaming.model.Categorie;
 
 @Local
-public interface ICategorieDao {
+public interface ICategorieService {
 	
 	/**
 	 * Méthode d'ajout d'une categorie
@@ -15,7 +15,7 @@ public interface ICategorieDao {
 	 * @return Categorie
 	 */
 	public Categorie ajouterCat(Categorie cat);
-
+	
 	/**
 	 * Méthode pour recuperer la liste des categories
 	 * @return liste d'objet categorie
@@ -42,5 +42,5 @@ public interface ICategorieDao {
 	 * @return categorie
 	 */
 	public Categorie supprimerCat(Categorie cat);
-	
+
 }

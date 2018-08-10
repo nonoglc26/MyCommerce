@@ -98,7 +98,7 @@ public class ClientManagedBean implements Serializable {
 	public String ajouterClient() {
 		Client clAjout = clService.ajouterCl(this.client);
 		if (clAjout != null) {
-			return "listeCl";
+			return "accueil";
 		} else {
 			// afficher un message d'erreur
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("L'ajout du client a échoué"));

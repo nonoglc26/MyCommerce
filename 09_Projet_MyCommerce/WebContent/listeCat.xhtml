@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+<title>Liste des Categories</title>
+</head>
+<body>
+	<ui:insert>
+		<ui:include src="/templates/header.xhtml" />
+	</ui:insert>
+
+<h1 style="color: darkblue; text-align: center">Liste des
+		catégories </h1>
+	<p:dataTable var="ca" value="#{catMB.listeCat}" update="@all">
+		<p:column headerText="Id">
+			<h:outputText value="#{ca.idCategorie}" />
+		</p:column>
+
+		<p:column headerText="Nom">
+			<h:outputText value="#{ca.nomCategorie}" />
+		</p:column>
+
+		<p:column headerText="Photo">
+			<h:graphicImage value="#{ca.image}" style="width: 100px; height: 100px"/>
+		</p:column>
+
+		<p:column headerText="Description">
+			<h:outputText value="#{ca.description}"/>
+		</p:column>
+		
+	</p:dataTable>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+<title>Recherche d'une Catégorie</title>
+</head>
+<body>
+	<ui:insert>
+		<ui:include src="/templates/header.xhtml" />
+	</ui:insert>
+	
+		<h:form>
+		<h:panelGrid columns="2">
+			Id catégorie : <p:inputText value="#{catMB.categorie.idCategorie}" />
+			<p:commandButton value="Rechercher la catégorie" action="#{catMB.rechercherCategorie}" ajax="false"/>
+		</h:panelGrid>
+	</h:form>
+	
+
+<h1 style="color: darkblue; text-align: center">Informations de la catégorie </h1>
+	<p:dataTable var="ca" value="#{catMB.categorie}" update="@all">
+		<p:column headerText="Id">
+			<h:outputText value="#{ca.idCategorie}" />
+		</p:column>
+
+		<p:column headerText="Nom">
+			<h:outputText value="#{ca.nomCategorie}" />
+		</p:column>
+
+		<p:column headerText="Photo">
+			<h:graphicImage value="#{ca.image}" style="width: 100px; height: 100px"/>
+		</p:column>
+
+		<p:column headerText="Description">
+			<h:outputText value="#{ca.description}"/>
+		</p:column>
+		
+	</p:dataTable>
+
+<h1>
+<h:messages/>
+</h1>
+
+</body>
+</html>
