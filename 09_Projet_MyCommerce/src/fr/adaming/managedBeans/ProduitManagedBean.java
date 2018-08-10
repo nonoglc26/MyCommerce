@@ -1,8 +1,10 @@
 package fr.adaming.managedBeans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 
 import javax.faces.application.FacesMessage;
@@ -34,7 +36,16 @@ public class ProduitManagedBean implements Serializable {
 
 	private UploadedFile file;
 
-	private List<Produit> listeProduit;
+	private List<Produit> listeProduit = new ArrayList<Produit>();
+	private boolean indice=false;
+	
+	
+	//Pour afficher la liste dans accueil
+	@PostConstruct
+	public void init(){
+		listeProduit=pService.getAllProduit();
+	}
+	
 
 	// Constructeur vide
 	/**
@@ -94,6 +105,20 @@ public class ProduitManagedBean implements Serializable {
 	
 
 	/**
+	 * @return the indice
+	 */
+	public boolean isIndice() {
+		return indice;
+	}
+
+	/**
+	 * @param indice the indice to set
+	 */
+	public void setIndice(boolean indice) {
+		this.indice = indice;
+	}
+
+	/**
 	 * @return the listeProduit
 	 */
 	public List<Produit> getListeProduit() {
@@ -107,14 +132,20 @@ public class ProduitManagedBean implements Serializable {
 		this.listeProduit = listeProduit;
 	}
 
+	
+	/**
+	 * Methode rechercher un produit
+	 * 
+	 */
+
 	public String rechercherProduit() {
 
-		
-		Produit pOut = pService.getProduitById(this.p);
+		Produit pRech = pService.getProduitById(this.p);
 
-		if (pOut != null) {
-			// reccuperer le produit rechercgé
-			this.p = pOut;
+		if (pRech != null) {
+			// reccuperer le produit recherché
+			this.p = pRech;
+			this.indice =true;
 
 		} else {
 			// ajouter un message d'erreur
@@ -192,5 +223,9 @@ public class ProduitManagedBean implements Serializable {
 				return "modifierProduit";
 		}
 	}
+	
+	
+	
+	
 	
 }
