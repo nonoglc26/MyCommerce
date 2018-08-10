@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import fr.adaming.model.LigneCommande;
 import fr.adaming.model.Produit;
 
 @Local
@@ -16,8 +17,6 @@ public interface IProduitService {
 	public Produit updateProduit(Produit p);
 
 //	public Produit getProduitByNom (Produit p);
-
-	
 	
 	
 	

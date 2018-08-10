@@ -3,6 +3,7 @@ package fr.adaming.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -41,7 +42,7 @@ public class Commande {
 	@JoinColumn(name="cl_id", referencedColumnName="id_cl")
 	private Client client;
 	
-	@OneToMany(mappedBy="commande")
+	@OneToMany(mappedBy="commande", cascade={CascadeType.PERSIST , CascadeType.REMOVE})
 	private List<LigneCommande> listeLigne;
 	
 	
@@ -52,8 +53,6 @@ public class Commande {
 	public Commande() {
 		super();
 	}
-
-
 
 	/**
 	 * Constructeurs avec paramètres

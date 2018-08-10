@@ -11,13 +11,6 @@ import fr.adaming.model.LigneCommande;
 public interface IClientDao {
 	
 	/**
-	 * Méthode ajouter un produit dans la ligne de commande
-	 * @param lc, correspondant à la ligne de coommande à ajouter dans la commande
-	 * @return int, qui sera la quantité de produit ajouté
-	 */
-	public int ajoutProduitLc(LigneCommande lc);
-	
-	/**
 	 * Méthode d'ajout du client
 	 * @param cl correspondant au client à ajouter
 	 * @return client

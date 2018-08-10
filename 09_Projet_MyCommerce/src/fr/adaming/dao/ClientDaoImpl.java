@@ -17,23 +17,6 @@ public class ClientDaoImpl implements IClientDao {
 	private EntityManager em;
 
 	@Override
-	public int ajoutProduitLc(LigneCommande lc) {
-		// creation de la requete en JPQL
-		String req = "INSERT INTO LigneCommande lc (lc.quantite, lc.produit, lc.prix) VALUES (pQuantite, pProduit, pPrix) WHERE lc.commande=:pCommande";
-
-		// envoi de la requete et passage des paramètres
-		Query query = em.createQuery(req);
-		query.setParameter("pQuantite", lc.getQuantite());
-		query.setParameter("pProduit", lc.getProduit().getIdProduit());
-		query.setParameter("pPrix", lc.getPrix());
-		query.setParameter("pCommande", lc.getCommande().getIdCommande());
-
-		query.executeUpdate();
-
-		return lc.getQuantite();
-	}
-
-	@Override
 	public Client ajouterCl(Client cl) {
 		em.persist(cl);
 		return cl;
