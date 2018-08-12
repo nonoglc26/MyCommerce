@@ -17,8 +17,12 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
- * Classe Produit Auteur: NGLC Adaming INTI
+ * Classe Produit 
+ * Association ManyToOne avec la classe categorie
+ * association OneToMany avec la classe ligne de commande
+ * Auteur: NGLC Adaming INTI
  */
+
 @Entity
 @Table(name = "produits")
 public class Produit implements Serializable {

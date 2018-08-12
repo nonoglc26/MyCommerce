@@ -19,8 +19,12 @@
 			N° client : <p:inputText value="#{clMB.client.idClient}" />
 			Nom : <p:inputText value="#{clMB.client.nomClient}" />
 			Adresse : <p:inputText value="#{clMB.client.adresse}" />
-			Email : <p:inputText value="#{clMB.client.email}" />
-			Téléphone : <p:inputText value="#{clMB.client.tel}" />
+			Email : <p:inputText value="#{clMB.client.email}">
+			<f:validateRegex pattern="^[_A-Za-z0-9+-]+(.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$" />
+			</p:inputText>
+			Téléphone : <p:inputText value="#{clMB.client.tel}">
+			<f:validateRegex pattern="0[0-9]{1}[-][0-9]{2}[-][0-9]{2}[-][0-9]{2}[-][0-9]{2}" />
+			</p:inputText>
 			Mot de passe : <p:inputText value="#{clMB.client.mdp}" />
 			<p:commandButton value="Modifier votre compte client" action="#{clMB.modifierClient}" />
 		</h:panelGrid>

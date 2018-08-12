@@ -37,8 +37,6 @@ public class LigneCommande {
 	@ManyToOne
 	@JoinColumn(name="co_id", referencedColumnName="id_co")
 	private Commande commande;
-	
-	//association UML en Java
 
 	
 	//Construsteurs

@@ -16,7 +16,9 @@
 
 	<h:form>
 		<h:panelGrid columns="2">
-			Email : <p:inputText value="#{clMB.client.email}" />
+			Email : <p:inputText value="#{clMB.client.email}">
+			<f:validateRegex pattern="^[_A-Za-z0-9+-]+(.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$" />
+			</p:inputText>
 			Mot de passe : <p:inputText value="#{clMB.client.mdp}" />
 			<p:commandButton value="Se connecter" action="#{clMB.connexionClient}" ajax="false"/>
 		</h:panelGrid>

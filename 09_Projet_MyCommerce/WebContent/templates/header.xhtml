@@ -26,51 +26,32 @@
 				<p:column>
 					<strong>Accueil</strong>
 				</p:column>
-								
+
 			</p:menuitem>
 
 			<p:submenu label="Clients" icon="ui-icon-document">
 				<p:column>
-					<p:submenu label="Client">
-						<p:menuitem value="Liste des clients" url="listeCl.xhtml"/>
-						<p:menuitem value="Ajouter un nouveau client" url="ajoutCl.xhtml" />
-						<p:menuitem value="Modifier un client" url="modifCl.xhtml" />
-						<p:menuitem value="Supprimer un client" url="supprCl.xhtml" />
-						<p:menuitem value="Rechercher un client" url="ficheCl.xhtml" />
+					<p:submenu label="Compte client">
+						<p:menuitem value="Créer son compte" url="ajoutCl.xhtml" />
+						<p:menuitem value="Modifier son compte" url="modifCl.xhtml" />
+						<p:menuitem value="Supprimer son compte" url="supprCl.xhtml" />
 						<p:menuitem value="Se connecter" url="connectClient.xhtml" />
 					</p:submenu>
 				</p:column>
 			</p:submenu>
 
-			<p:submenu label="Produits et Catégories" icon="ui-icon-pencil">
-				<p:column>
-					<p:submenu label="Produits">
-						<p:menuitem value="Liste des produits" url="listeProduit.xhtml" />	
-						<p:menuitem value="Ajouter un produit" url="ajoutProduit.xhtml" />		
-						<p:menuitem value="Modifier un produit" url="modifierProduit.xhtml" />
-						<p:menuitem value="Supprimer un produit" url="supprimerProduit.xhtml" />
-						<p:menuitem value="Rechercher un produit" url="rechercheProduit.xhtml" />
-					</p:submenu>
-				</p:column>
+			<p:menuitem label="Panier" icon="ui-icon-check" url="panier.xhtml">
+				<p:column>Panier</p:column>
+			</p:menuitem>
 
-				<p:column>
-					<p:submenu label="Categories" icon="ui-icon-help">
-						<p:menuitem value="Liste des categories" url="listeCat.xhtml" />
-						<p:menuitem value="Ajouter une categorie" url="ajoutCat.xhtml" />
-						<p:menuitem value="Modifier une categorie" url="modifCat.xhtml" />
-						<p:menuitem value="Supprimer une categorie" url="supprCat.xhtml" />
-						<p:menuitem value="Rechercher une categorie" url="ficheCat.xhtml" />
-					</p:submenu>
-				</p:column>
-			</p:submenu>
+			<p:menuitem value="Administrateur" url="loginAd.xhtml" />
+			
 
-		<p:menuitem value="Administrateur"  url="loginAd.xhtml" />		
-		
 		</p:megaMenu>
 
 
 	</h:form>
-	
+
 
 </h:body>
 </html>

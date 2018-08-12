@@ -7,14 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * Classe Client Classe persistante association OneToMany avec la classe
- * Commande
+ * Classe Client 
+ * association OneToMany avec la classe Commande
  * 
  */
 
@@ -35,7 +33,6 @@ public class Client {
 
 	// Transformation de l'association UML en Java
 	@OneToMany(mappedBy = "client")
-
 	private List<Commande> listeCommandes;
 
 	// Constructeurs

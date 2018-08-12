@@ -16,11 +16,15 @@
 
 	<h:form>
 		<h:panelGrid columns="2">
-			Nom : <p:inputText value="#{clMB.client.nomClient}" />
-			Adresse : <p:inputText value="#{clMB.client.adresse}" />
-			Email : <p:inputText value="#{clMB.client.email}" />
-			Téléphone : <p:inputText value="#{clMB.client.tel}" />
-			Mot de passe : <p:inputText value="#{clMB.client.mdp}" />
+			Nom : <p:inputText value="#{clMB.client.nomClient}" required="true" />
+			Adresse : <p:inputText value="#{clMB.client.adresse}" required="true" />
+			Email : <p:inputText value="#{clMB.client.email}" required="true">
+			<f:validateRegex pattern="^[_A-Za-z0-9+-]+(.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$" />
+			</p:inputText>
+			Téléphone : <p:inputText value="#{clMB.client.tel}">
+			<f:validateRegex pattern="0[0-9]{1}[-][0-9]{2}[-][0-9]{2}[-][0-9]{2}[-][0-9]{2}" />
+			</p:inputText>
+			Mot de passe : <p:inputText value="#{clMB.client.mdp}" required="true" />
 			<p:commandButton value="Créer votre compte client" action="#{clMB.ajouterClient}"/>
 		</h:panelGrid>
 	</h:form>

@@ -19,13 +19,15 @@ import fr.adaming.model.Produit;
 import fr.adaming.service.IProduitService;
 
 /**
- * ManagedBean Administrateur Amandine
+ * ManagedBean Administrateur 
+ * @author Amandine Adaming
  * 
  */
 
 @ManagedBean(name = "pMB")
 @RequestScoped
 public class ProduitManagedBean implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@EJB
 	private IProduitService pService;

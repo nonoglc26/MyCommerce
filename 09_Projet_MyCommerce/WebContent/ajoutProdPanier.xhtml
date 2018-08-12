@@ -9,7 +9,7 @@
 
 <h:head>
 
-	<title>Accueil</title>
+	<title>Ajout d'un article à la commande</title>
 </h:head>
 
 <h:body>
@@ -18,9 +18,16 @@
 	<ui:insert>
 		<ui:include src="/templates/header.xhtml" />
 	</ui:insert>
-<!-- a modifier quand la requete se fera selon la categorie -->
-		Lien vers liste des produits de la categorie 1 : 
-		<p:link value="liste" outcome="listeProduit" />
+
+	<h:form>
+		<h:panelGrid columns="4">
+			Produit : <h:inputText value="#{paMB.produit.idProduit}"/>
+			Quantité : <h:inputText value="#{paMB.nbr}" />
+		<p:commandButton value="Ajouter au Panier" action="#{paMB.ajouterProdPanier}"/>
+		</h:panelGrid>
+	</h:form>
+	
+	<h1><h:messages/></h1>
 
 </h:body>
 </html>

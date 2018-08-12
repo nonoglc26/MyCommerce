@@ -16,7 +16,8 @@ import javax.persistence.Transient;
 
 /**
  * Classe Categorie
- * Auteur: NGLC Adaming INTI
+ * Association OneToMany avec la classe produit
+ * Auteur: NGLC Adaming
  */
 @Entity
 @Table(name="categories")

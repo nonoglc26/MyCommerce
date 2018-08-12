@@ -3,7 +3,6 @@ package fr.adaming.model;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -42,7 +41,7 @@ public class Commande {
 	@JoinColumn(name="cl_id", referencedColumnName="id_cl")
 	private Client client;
 	
-	@OneToMany(mappedBy="commande", cascade={CascadeType.PERSIST , CascadeType.REMOVE})
+	@OneToMany(mappedBy="commande")
 	private List<LigneCommande> listeLigne;
 	
 	

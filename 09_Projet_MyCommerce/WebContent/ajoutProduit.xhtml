@@ -24,11 +24,11 @@
  
 	<h:form enctype="multipart/form-data">
 		<h:panelGrid columns="2">
-		Designation :<p:inputText value="#{pMB.p.designation}"/>
-		Description :<p:inputText value="#{pMB.p.description}"/>
-		Prix :<p:inputText value="#{pMB.p.prix}"/>
-		Quantite :<p:inputText value="#{pMB.p.quantite}"/>
-		Photo : <p:fileUpload value="#{pMB.file}" mode="simple" skinSimple="true"/>
+		Designation :<p:inputText value="#{pMB.p.designation}" required="true" />
+		Description :<p:inputText value="#{pMB.p.description}" required="true" />
+		Prix :<p:inputText value="#{pMB.p.prix}" required="true" />
+		Quantite :<p:inputText value="#{pMB.p.quantite}" required="true" />
+		Photo : <p:fileUpload value="#{pMB.file}" mode="simple" skinSimple="true" required="true" />
 		<h:commandButton value="Ajouter" action="#{pMB.ajouterProduit}"/>
 		
 		
