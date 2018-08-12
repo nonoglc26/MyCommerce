@@ -24,7 +24,7 @@ body {
 .boutons{
 	border-color:  black;
 	border-style: solid;
-	background-color: white;
+	background-color: black;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px 10px;
 	border-radius:10px 10px;
@@ -42,30 +42,28 @@ body {
 
 
 <h:outputStylesheet library="css" name="accueil.css" />
-
-<h1 align="center" style="color: #61380B">JavaZone</h1>
 	
 
 	<ui:insert>
 		<ui:include src="/templates/header.xhtml" />
 	</ui:insert>
-	<h3 align="center" style="color: #F5F5EA">Avec JavaZone fais fonctionner tes neurones!</h3>
+	<br/>
+	<h1 align="center" style="color: lightgrey; text-shadow: 3px 3px black; font-size: 80px">JavaZone</h1>
+	<h1 align="center" style="color: lightgrey; text-shadow: 3px 3px black; font-size: 50px">Avec JavaZone fais fonctionner tes neurones!</h1>
 	<br/>
 	<br/>
 	<br/>
 	
 	<br/>
-	<h1 align="center" style="color: #F5F5EA">Que voulez-vous acheter?</h1>
+	<h1 align="center" style="color: #F5F5EA; text-shadow: 2px 2px black;">Que voulez-vous acheter?</h1>
 <div align="center"  class="boutons">
-<!-- a modifier quand la requete se fera selon la categorie -->
-		<p:link value="JavaLivres" outcome="listeProduit" />		
+		<p:link value="JavaLivres" outcome="listeProduit" style="color: white"/>		
 </div>
 
 <br/>
 <br/>
 <div align="center"  class="boutons">
-<!-- a modifier quand la requete se fera selon la categorie -->
-		<p:link value="OneJavaShow" outcome="listeProduit"  />		
+		<p:link value="OneJavaShow" outcome="listeProduit" style="color: white" />		
 </div>
 
 
