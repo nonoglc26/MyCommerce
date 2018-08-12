@@ -7,6 +7,13 @@ import javax.ejb.Local;
 import fr.adaming.model.LigneCommande;
 import fr.adaming.model.Produit;
 
+
+/**
+ * Interface produit Service
+ * @author Amandine Adaming
+ * 
+ */
+
 @Local
 public interface IProduitService {
 
@@ -14,13 +21,13 @@ public interface IProduitService {
 	 * Methode liste 
 	 * 
 	 */
-	public List<Produit> getAllProduit ();
+	public List<Produit> getAllProduit (Produit p);
 	
 	/**
 	 * Methode ajouter produit
 	 * 
 	 */
-	public Produit addProduit(Produit p);
+	public int addProduit(Produit p);
 	
 	/**
 	 * Methode Chercher un produit par son Id

@@ -10,17 +10,67 @@
 <h:head>
 
 	<title>Accueil</title>
+	
+<style>
+<!--
+body {
+	
+	background-image: url("resources/img/tropical1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+.boutons{
+	border-color:  black;
+	border-style: solid;
+	background-color: white;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px 10px;
+	border-radius:10px 10px;
+	width:200px;
+	height:25px;
+	margin-right: auto;
+	margin-left: auto;
+}
+-->
+</style>
+
 </h:head>
 
 <h:body>
 
 
+<h:outputStylesheet library="css" name="accueil.css" />
+
+<h1 align="center" style="color: #61380B">JavaZone</h1>
+	
+
 	<ui:insert>
 		<ui:include src="/templates/header.xhtml" />
 	</ui:insert>
+	<h3 align="center" style="color: #F5F5EA">Avec JavaZone fais fonctionner tes neurones!</h3>
+	<br/>
+	<br/>
+	<br/>
+	
+	<br/>
+	<h1 align="center" style="color: #F5F5EA">Que voulez-vous acheter?</h1>
+<div align="center"  class="boutons">
 <!-- a modifier quand la requete se fera selon la categorie -->
-		Lien vers liste des produits de la categorie 1 : 
-		<p:link value="liste" outcome="listeProduit" />
+		<p:link value="JavaLivres" outcome="listeProduit" />		
+</div>
+
+<br/>
+<br/>
+<div align="center"  class="boutons">
+<!-- a modifier quand la requete se fera selon la categorie -->
+		<p:link value="OneJavaShow" outcome="listeProduit"  />		
+</div>
+
 
 </h:body>
 </html>
+
+
+

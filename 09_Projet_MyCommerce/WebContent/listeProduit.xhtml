@@ -10,10 +10,32 @@
 <h:head>
 
 	<title>Liste des produits</title>
+	
+	<style>
+<!--
+body {
+	
+	background-image: url("resources/img/tropical2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+
+.tableau{
+	width: 85%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+-->
+</style>
 </h:head>
 
 <h:body>
 
+<h1 align="center" style="color:  #FFFFFF">JavaZone</h1>
 
 	<ui:insert>
 		<ui:include src="/templates/header.xhtml" />
@@ -21,13 +43,13 @@
 
 
 
-	<h2 style="color: #561361; text-align: center">Liste des produits</h2>
+	<h2 style="color: #FFFFFF; text-align: center">Liste des produits</h2>
 
 
 
 	<h:form>
 		<!--Table Scope car va chercher dans la session -->
-		<p:dataTable var="p" value="#{pMB.listeProduit}">
+		<p:dataTable var="p" value="#{pMB.listeProduit}" styleClass="tableau">
 
 			<p:column headerText="Id du produit">
 				<h:outputText value="#{p.idProduit}" />

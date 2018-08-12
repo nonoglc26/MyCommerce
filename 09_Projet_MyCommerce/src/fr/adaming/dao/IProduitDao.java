@@ -15,8 +15,8 @@ import fr.adaming.model.Produit;
 @Local
 public interface IProduitDao {
 
-	public List<Produit> getAllProduit ();
-	public Produit addProduit(Produit p);
+	public List<Produit> getAllProduit (Produit p);
+	public int addProduit(Produit p);
 	public Produit getProduitById(Produit p);
 	public Produit deleteProduit(Produit p);
 	public Produit updateProduit(Produit p);

@@ -29,7 +29,12 @@
 		Prix :<p:inputText value="#{pMB.p.prix}" required="true" />
 		Quantite :<p:inputText value="#{pMB.p.quantite}" required="true" />
 		Photo : <p:fileUpload value="#{pMB.file}" mode="simple" skinSimple="true" required="true" />
-		<h:commandButton value="Ajouter" action="#{pMB.ajouterProduit}"/>
+		Categorie <p:selectOneMenu id="console" value="#{pMB.p.categorie.nomCategorie}" style="width:125px">
+            <f:selectItem itemLabel="Seletionner" itemValue="#" />
+            <f:selectItem itemLabel="Livres" itemValue="#" />
+            <f:selectItem itemLabel="Spectacles" itemValue="#" /> 
+        </p:selectOneMenu>
+		<p:commandButton value="Ajouter" action="#{pMB.ajouterProduit}" ajax="false"/>
 		
 		
 		

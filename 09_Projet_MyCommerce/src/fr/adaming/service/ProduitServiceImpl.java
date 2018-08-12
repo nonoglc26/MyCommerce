@@ -9,6 +9,12 @@ import fr.adaming.dao.IProduitDao;
 import fr.adaming.model.LigneCommande;
 import fr.adaming.model.Produit;
 
+
+/**
+ * Classe produit Service
+ * @author Amandine Adaming
+ * 
+ */
 @Stateful
 public class ProduitServiceImpl implements IProduitService{
 
@@ -17,13 +23,13 @@ public class ProduitServiceImpl implements IProduitService{
 	
 	
 	@Override
-	public List<Produit> getAllProduit() {
-		return pDao.getAllProduit();
+	public List<Produit> getAllProduit(Produit p) {
+		return pDao.getAllProduit(p);
 	}
 	
 	
 	@Override
-	public Produit addProduit(Produit p) {
+	public int addProduit(Produit p) {
 		return pDao.addProduit(p);
 	}
 

@@ -10,14 +10,7 @@
 </h:head>
 <h:body>
 	<h:form id="form">
-		<h:panelGrid columns="2" cellpadding="4">
-			<p:outputLabel for="orientation" value="Orientation:" />
-			<p:selectOneButton id="orientation"
-				value="#{megaMenuView.orientation}" onchange="$('#form').submit()">
-				<f:selectItem itemLabel="Horizontal" itemValue="horizontal" />
-				<f:selectItem itemLabel="Vertical" itemValue="vertical" />
-			</p:selectOneButton>
-		</h:panelGrid>
+		
 
 
 		<p:megaMenu orientation="#{megaMenuView.orientation}"

@@ -9,11 +9,29 @@
 <head>
 <title>Connexion Client</title>
 </head>
+
+
 <body>
+<h:outputStylesheet library="css" name="loginAd.css" />
+
+
+
+<h1 align="center" >JavaZone</h1>
 	<ui:insert>
 		<ui:include src="/templates/header.xhtml" />
 	</ui:insert>
+<h1 style="color:#561361; text-align: center; text-decoration:underline;">Client</h1>
+	<br/>
+<hr/>
+<br/>
+<div align="center">
+		<h:graphicImage value= "resources/img/admin.png" styleClass="image"/>
+	</div>
 
+<div class="formulaire" align="center">
+<br/>
+	<h2 style="text-align: center">Veuillez vous identifier</h2>
+	<br/>
 	<h:form>
 		<h:panelGrid columns="2">
 			Email : <p:inputText value="#{clMB.client.email}">
@@ -23,9 +41,11 @@
 			<p:commandButton value="Se connecter" action="#{clMB.connexionClient}" ajax="false"/>
 		</h:panelGrid>
 	</h:form>
-<h1>
-<h:messages/>
-</h1>
+</div>
+<br/>
+
+<h1 style="color:red; text-align: center;"><h:messages></h:messages></h1>
+
 
 
 </body>

@@ -1,0 +1,38 @@
+@CHARSET "ISO-8859-1";
+
+
+body {
+	background: linear-gradient(100deg,white, #00F390, #7FD9EE, #00F390, white);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-variant: small-caps;
+	
+	
+}
+
+.formulaire{
+	border-color:  #561361;
+	border-style: double;
+	-moz-border-radius:10px 0;
+	-webkit-border-radius:10px 0;
+	border-radius:10px 0;
+	width:400px;
+	height:250px;
+	margin-right: auto;
+	margin-left: auto;
+	
+	
+}
+
+div{
+	float: inherit;
+	
+}
+
+.image{
+	width:250px;
+	height:250px;
+}
+
+
+

@@ -15,6 +15,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.model.UploadedFile;
 
 import fr.adaming.model.Administrateur;
+import fr.adaming.model.Categorie;
 import fr.adaming.model.Produit;
 import fr.adaming.service.IProduitService;
 
@@ -35,6 +36,7 @@ public class ProduitManagedBean implements Serializable {
 	// Attributs
 	private Administrateur ad;
 	private Produit p;
+	private Categorie c;
 
 	private UploadedFile file;
 
@@ -42,10 +44,10 @@ public class ProduitManagedBean implements Serializable {
 	private boolean indice=false;
 	
 	
-	//Pour afficher la liste dans accueil
+	//Pour afficher la liste 
 	@PostConstruct
 	public void init(){
-		listeProduit=pService.getAllProduit();
+		listeProduit=pService.getAllProduit(p);
 	}
 	
 
@@ -163,12 +165,15 @@ public class ProduitManagedBean implements Serializable {
 	 */
 	public String ajouterProduit() {
 		this.p.setPhoto(file.getContents());
-		Produit pAjout = pService.addProduit(this.p);
+		p.setCategorie(c);
+		//Categorie c1= new Categorie();
+		
+		int pAjout = pService.addProduit(this.p);
 
-		if (pAjout != null) {
+		if (pAjout != 0) {
 			// recuperer la liste des produits
 			
-			listeProduit= pService.getAllProduit();
+			listeProduit= pService.getAllProduit(p);
 			return "listeProduit";
 
 		} else {
@@ -187,7 +192,7 @@ public class ProduitManagedBean implements Serializable {
 	public String SupprimerProduit() {
 		Produit pSup = pService.deleteProduit(this.p);
 		if (pSup != null) {
-			listeProduit = pService.getAllProduit();
+			listeProduit = pService.getAllProduit(p);
 			return "listeProduit";
 		} else {
 			// ajouter un message d'erreur
@@ -202,7 +207,7 @@ public class ProduitManagedBean implements Serializable {
 
 	public String AfficherListe() {
 		@SuppressWarnings("unused")
-		List<Produit> listeProduit = pService.getAllProduit();
+		List<Produit> listeProduit = pService.getAllProduit(p);
 		return "listeProduit";
 	}
 	
@@ -217,7 +222,7 @@ public class ProduitManagedBean implements Serializable {
 		this.p.setPhoto(file.getContents());
 		Produit pModif =pService.updateProduit(this.p);
 		if(pModif!=null){
-			listeProduit= pService.getAllProduit();
+			listeProduit= pService.getAllProduit(p);
 			return "listeProduit";
 		}else{
 			// ajouter un message d'erreur
